@@ -3,6 +3,7 @@ package com.ariflutfhansah.masakpedia
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,6 +30,10 @@ class SplashActivity : AppCompatActivity() {
         val inputStream: InputStream = resources.openRawResource(R.raw.app_icon)
         val svg: SVG = SVG.getFromInputStream(inputStream)
         svgImageView.setSVG(svg)
+
+        // Memuat animasi
+        val animation = AnimationUtils.loadAnimation(this, R.anim.logo_animation)
+        svgImageView.startAnimation(animation)
 
         // Menampilkan splash screen selama 3 detik
         Handler().postDelayed({
