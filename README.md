@@ -1,1 +1,1 @@
-# android-app-masakpedia
+# Masakpedia
